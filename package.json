@@ -1,0 +1,34 @@
+{
+  "name": "note_taking_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc -w",
+    "dev": "nodemon ./dist/index.js",
+    "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/ormconfig.ts",
+    "migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./src/ormconfig.ts",
+    "schema:sync": "npm run typeorm schema:sync -- -d src/ormconfig.ts",
+    "migration:show": "npm run typeorm migration:show -- -d src/ormconfig.ts",
+    "migration:generate": "npm run typeorm migration:generate -- -d src/ormconfig.ts",
+    "migration:create": "npm run typeorm migration:create",
+    "typeorm": "typeorm-ts-node-esm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "class-validator": "^0.14.1",
+    "pg": "^8.11.3",
+    "reflect-metadata": "^0.2.1",
+    "type-graphql": "^1.1.1",
+    "typeorm": "^0.3.19"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
